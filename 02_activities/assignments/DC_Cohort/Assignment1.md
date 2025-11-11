@@ -1,3 +1,4 @@
+Delphine Ji
 # Assignment 1: Meet the farmersmarket.db and Basic SQL
 
 🚨 **Please review our [Assignment Submission Guide](https://github.com/UofT-DSI/onboarding/blob/main/onboarding_documents/submissions.md)** 🚨 for detailed instructions on how to format, branch, and submit your work. Following these guidelines is crucial for your submissions to be evaluated correctly.
@@ -205,5 +206,24 @@ Consider, for example, concepts of fariness, inequality, social structures, marg
 
 
 ```
-Your thoughts...
+Delphine Ji
+The story of Pakistan’s National Database and Registration Authority (NADRA) shows that data systems are never neutral. When an “Error: Unmarried Mother” message can block a citizen from renewing an ID, we see how software silently enforces a social worldview. Database design decisions—about which fields are mandatory, what relationships can exist, and what counts as “valid” input—end up encoding political and cultural values as technical rules.
+
+At its core, NADRA’s relational schema ties every record to a predefined family tree: two married parents, their biological children, and male household heads. What appears to be a logical data model—entities, keys, and relationships—is in fact a digital expression of patriarchy and heteronormativity. A schema meant to ensure accuracy and efficiency becomes a mechanism of exclusion. If someone’s life does not match the database’s assumptions—an orphan, a single parent, a queer couple, a refugee—the system literally cannot represent them. They cease to exist in the digital nation.
+
+Riz’s experience renewing his ID shows how a technical schema can hard-code social expectations. His mother’s decision decades earlier not to change her surname became a “data error.” In an analog bureaucracy, human clerks could overlook such inconsistencies; in a digitized one, the logic of the database overrides human judgment. The design choice to make “married = TRUE” a required condition embedded a moral stance: legitimacy flows through formal marriage.
+
+The NADRA database inherits older colonial and post-partition record-keeping practices that equated identity with lineage. Because citizenship itself is verified through ancestry, family structures became the logical backbone of the system. This legacy reveals how technology evolves within historical and political contexts. Databases reflect the priorities of those in power—here, the state’s need to define who counts as a “real” citizen and who does not.
+
+We encounter similar value systems in databases we use daily, though often in subtler ways. University registration forms that allow only “male” or “female” replicate binary gender assumptions. Banking systems that require a “legal surname” privilege certain naming conventions and erase Indigenous or hyphenated names. Social-media algorithms amplify popular or normative content, rewarding conformity and marginalizing minority voices. Even health apps often presume one biological baseline, making them less accurate for people outside that data norm.
+
+In each case, the schema—the list of allowable fields and relationships—decides which identities can exist in the system and which must be approximated, hidden, or falsified. The technical phrase “data validation” carries moral weight: whose lives are validated, and whose are rejected as “invalid entry.”
+
+Designers often describe relational databases as objective because their logic is mathematical. But fairness cannot be achieved through computation alone. For example, NADRA added more gender options after a court order, yet the fix did not solve deeper issues around family linkage. Because every record still requires two parents, khawaja sira citizens and orphans remain trapped in bureaucratic limbo. This demonstrates that bias is not always a matter of malicious code—it lives in the structural rules that define relationships. Once those relationships are baked into millions of records, changing them becomes technically and politically costly.
+
+Engineers must recognize that social categories change faster than code. Instead of assuming stability, systems should anticipate diversity and future revision. Simple design choices—such as allowing null values for parent fields, or using flexible ENUM data types for gender—can make databases more inclusive and easier to adapt. Beyond the schema, institutions should create governance processes where sociologists, legal scholars, and affected communities help define data standards. Identity is not merely a technical variable; it is lived reality.
+
+For me, the key lesson from this article is that every dataset embodies a worldview. When we normalize those embedded assumptions, we risk reproducing inequality at scale. Just as NADRA’s schema enforces a particular vision of family, our own data systems—student records, employment portals, medical databases—carry implicit judgments about what a “normal” life looks like. If designers do not question those defaults, technology will continue to discipline people into categories rather than reflect their complexity.
+
+Databases are social artifacts disguised as technical tools. The NADRA case reminds us that fairness, inclusion, and justice must be engineered intentionally. The goal is not simply to collect accurate data but to design infrastructures that recognize human variety. Good design, as software engineer Jehangir Amjad notes, accepts change as inevitable. A truly ethical database would treat flexibility not as a bug but as a feature—allowing our digital systems to evolve alongside the societies they claim to represent.
 ```
