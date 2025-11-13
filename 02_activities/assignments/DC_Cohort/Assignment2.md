@@ -44,9 +44,12 @@ Additionally, include a date table.
 There are several tools online you can use, I'd recommend [Draw.io](https://www.drawio.com/) or [LucidChart](https://www.lucidchart.com/pages/).
 
 **HINT:** You do not need to create any data for this prompt. This is a conceptual model only. 
+## Bookstore Logical Model ERD
+![Bookstore Logical Model](BookstoreLogicModel.png)
 
 #### Prompt 2
 We want to create employee shifts, splitting up the day into morning and evening. Add this to the ERD.
+![Bookstore Logical Model](BookstoreLogicModelShift.png)
 
 #### Prompt 3
 The store wants to keep customer addresses. Propose two architectures for the CUSTOMER_ADDRESS table, one that will retain changes, and another that will overwrite. Which is type 1, which is type 2? 
@@ -54,7 +57,15 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 **HINT:** search type 1 vs type 2 slowly changing dimensions. 
 
 ```
-Your answer...
+Type 1
+CUSTOMER_ADDRESS(customer_id PK FK, street, city, region, postal, country, last_updated)
+-- On change → UPDATE existing row
+
+Type 2
+CUSTOMER_ADDRESS_SCD(address_id PK, customer_id FK, street, city, region,
+postal, country, effective_start, effective_end, is_current)
+-- On change → INSERT new row, close old row
+
 ```
 
 ***
@@ -183,5 +194,13 @@ Consider, for example, concepts of labour, bias, LLM proliferation, moderating c
 
 
 ```
-Your thoughts...
+Boykis’ article highlights a key idea: modern AI systems may look automated, but they rely heavily on human labor and human judgment. The ethical issues center on invisible work, bias, and the way technology reflects social values rather than objective truth.
+
+First, the article shows the problem of hidden labor. Just like clothing is still sewn by people, AI systems depend on large groups of workers who label images, classify words, and clean data—often for very low pay. ImageNet, one of the most influential datasets in machine learning, was built through millions of human-labeled images. Yet, these workers remain invisible even though their labor makes modern AI possible. This raises ethical concerns about fair compensation and the exploitation of global crowdsourced labor.
+
+Second, the article emphasizes bias in datasets. The labels used in training sets—like calling someone a “nerd” or “orphan”—come from human opinions and cultural assumptions. These choices embed social biases directly into AI systems. When models trained on biased data are used in areas like policing or hiring, those biases can cause real harm. The idea that AI is “objective” is misleading because the structure of datasets and the taxonomy of categories are all created by people.
+
+Another issue is the politics of classification. Systems like WordNet and ImageNet rely on decisions about how to define concepts, what words mean, and how images should be grouped. These decisions reflect cultural values and can exclude or misrepresent certain groups. When these classifications scale into global technologies, the biases scale with them.
+
+Overall, the article shows that AI is not neutral—it is built on human choices, human labor, and human biases. Ethical AI requires acknowledging these foundations and designing systems that respect workers, reduce harm, and critically examine the assumptions built into training data.
 ```
